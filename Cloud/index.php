@@ -5,7 +5,7 @@
 ?>
 
 <?php 
-  $sql = "SELECT * FROM internships WHERE deleted=0";
+  $sql = "SELECT * FROM internship";
   $internships = $db->query($sql);
 ?>
 <main>
