@@ -16,15 +16,15 @@
 					<div class="row">					
 						<div class="col-md-12">
 							<div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
-				              <input type="text" id="committeeFullname" class="form-control form-control-sm" name="committeeFullname">
+				              <input type="text" id="committeeFullname" class="form-control form-control-sm" name="committeeFullname" required>
 				              <label for="committeeFullname">Full Name</label>
 				            </div>
 				            <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
-				              <input type="email" id="committeeEmail" class="form-control form-control-sm" name="committeeEmail">
+				              <input type="email" id="committeeEmail" class="form-control form-control-sm" name="committeeEmail" required>
 				              <label for="committeeEmail">Email</label>
 				            </div>
 				            <div class="md-form form-sm"> <i class="fa fa-lock prefix"></i>
-				              <input type="password" id="committeePassword" class="form-control form-control-sm" name="committeePassword">
+				              <input type="password" id="committeePassword" class="form-control form-control-sm" name="committeePassword" required>
 				              <label for="committeePassword">Password</label>
 				            </div>
 						</div>
