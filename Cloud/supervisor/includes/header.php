@@ -37,7 +37,7 @@
             <a class="nav-link" href="internship.php">Internship</a>
           </li>
           <?php 
-            if(!isset($_SESSION['email'])){
+            if(!isset($_SESSION['supervisorEmail'])){
               echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
             }
             else{
