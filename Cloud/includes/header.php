@@ -55,7 +55,7 @@
                 echo "
                 <li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>Student</a></li>
                 <li class='nav-item'><a href='supervisorLogin.php' class='nav-link' style='border-radius: 10em;'>Supervisor</a></li>
-                <li class='nav-item'><a href='' class='nav-link' style='border-radius: 10em;'>Committee</a>
+                <li class='nav-item'><a href='committeeLogin.php' class='nav-link' style='border-radius: 10em;'>Committee</a>
                 ";
               }
               else{
@@ -63,19 +63,6 @@
                 echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
               }
             ?>
-        </ul>
-        <ul class="navbar-nav ml-auto nav-flex-icons">
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fab fa-google-plus-g"></i>
-            </a>
-          </li>
-        </ul>
       </div>
     </nav>
     <!--/.Navbar -->
