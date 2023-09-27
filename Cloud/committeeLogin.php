@@ -51,7 +51,7 @@
                                     $_SESSION['committeeID'] = $id['committeeID'];
                                 endwhile;
 					echo "<script>alert('You logged in successfully!')</script>";
-					echo "<script>window.open('supervisor/studentList.php','_self')</script>";
+					echo "<script>window.open('committee/home.php','_self')</script>";
 				}else{
 					$_SESSION['committeeEmail'] = $committeeEmail;
 					echo "<script>alert('You logged in successfully!')</script>";

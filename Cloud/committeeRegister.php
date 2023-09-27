@@ -71,7 +71,7 @@
 			$_SESSION['committeeEmail'] = $committeeEmail;
 
 			echo "<script>alert('Account has been created successfully')</script>";
-			echo "<script>window.open('index.php','_self')</script>";
+			echo "<script>window.open('committee/home.php','_self')</script>";
 		}
 	}
 ?>

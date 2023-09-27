@@ -21,7 +21,7 @@
   <header>
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-      <a class="navbar-brand" href="index.php">TARC</a>
+      <a class="navbar-brand" href="home.php">TARUMT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="progressReportList.php">Progress Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="myaccount.php">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Logout</a>
           </li>
           <?php 
 //            if(!isset($_SESSION['email'])){
