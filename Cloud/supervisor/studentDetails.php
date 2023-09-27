@@ -8,33 +8,38 @@
 
 <div class="row">
 <?php 
-  $sql = "SELECT * FROM student WHERE supervisorID = 'SPV001'";
+    if (isset($_GET['studentID'])) {
+        $selectedStudent = $_GET['studentID'];
+    }
+  $id = $_SESSION['supervisorID'];
+
+  $sql = "SELECT * FROM student WHERE supervisorID = '$id'";
+
   $students = $db->query($sql);
 ?>
     <div class="col-md-3 m-4">
         <table class="table table-hover">
-            <thead>
             <thead>
                 <tr>
                     <th scope="col">Student ID</th>
                     <th scope="col">Name</th>
                 </tr>
             </thead>
-            </thead>
-        <?php while($student = mysqli_fetch_assoc($students)): ?>
-            <tr>
-                <th scope="col">
-                    <?=$student['studentID'];?>&nbsp;&nbsp;
-                </th>
-                <td>
-                    <?=$student['name'];?>
-                </td>
-            </tr>
-        <?php endwhile; ?>
+            <?php while ($student = mysqli_fetch_assoc($students)): ?>
+                <tr onclick="window.location='studentDetails.php?studentID=<?php echo $student['studentID']; ?>';">
+                    <th scope="col">
+                        <?= $student['studentID']; ?>&nbsp;&nbsp;
+                    </th>
+                    <td>
+                        <?= $student['name']; ?>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+
         </table>
     </div>
 <?php 
-  $sql = "SELECT * FROM student WHERE studentID = 'STD001'";
+  $sql = "SELECT * FROM student WHERE studentID = '$selectedStudent'";
   $students = $db->query($sql);
 ?>
     <div class="col-md-8">
@@ -69,7 +74,7 @@
         <div class="card m-4 p-4">
             
 <?php 
-  $sql = "SELECT * FROM internship WHERE studentID = 'STD001'";
+  $sql = "SELECT * FROM internship WHERE studentID = '$selectedStudent'";
   $internships = $db->query($sql);
 ?>
             
@@ -107,7 +112,7 @@
                 </tr>
             </table>
             <?php $status =$student['status'];?>
-            <?php if ($status=="pending"): ?>
+            <?php if ($status=="Pending Approval"): ?>
             <div class="row">
                 <div class="col-md-6 m-4">
                     <button type="button" class="btn btn-primary" width="100%">Approve</button>
