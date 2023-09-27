@@ -57,16 +57,19 @@
 				$email = $_POST['email'];
 				$password = $_POST['password'];
 
-				$sql = "SELECT * FROM employer WHERE password = '$password' AND email = '$email'";
+				$sql = "SELECT * FROM supervisor WHERE password = '$password' AND email = '$email'";
 				$runSql = $db->query($sql);
 				$check_user = mysqli_num_rows($runSql);
 				if($check_user == 0){
 					echo "<script>alert('Your password or email is incorrect, please try again!')</script>";
 					exit();
 				}
+                                while($id = mysqli_fetch_assoc($runSql)):
+                                    $_SESSION['supervisorID'] = $id['supervisorID'];
+                                endwhile;
 				if($_SESSION['email'] = $email){
 					echo "<script>alert('You logged in successfully!')</script>";
-					echo "<script>window.open('index.php','_self')</script>";
+					echo "<script>window.open('studentList.php','_self')</script>";
 				}
 				// $ip = getIp();
 				// $sel_cart = "SELECT * FROM cart WHERE ip_add = '$ip'";

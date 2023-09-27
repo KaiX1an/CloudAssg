@@ -64,6 +64,7 @@
 					echo "<script>alert('Your password or email is incorrect, please try again!')</script>";
 					exit();
 				}
+                                while
 				if($_SESSION['email'] = $email){
 					echo "<script>alert('You logged in successfully!')</script>";
 					echo "<script>window.open('studentList.php','_self')</script>";

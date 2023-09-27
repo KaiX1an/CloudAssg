@@ -6,7 +6,10 @@
 
 
 <?php 
-  $sql = "SELECT * FROM student";
+    $id = $_SESSION['supervisorID'];
+
+    $sql = "SELECT * FROM student WHERE supervisorID = '$id'";
+
   $students = $db->query($sql);
 ?>
 <main>
@@ -30,16 +33,21 @@
             <?php 
             $studentID = $student['studentID'];
             $sql1 = "SELECT * FROM Internship WHERE studentID = '$studentID'";
-            $internships = $db->query($sql1);
-            
-            while($internship = mysqli_fetch_assoc($internships)): ?>
+            $internships = $db->query($sql1);?>
             <td>
+            <?php while($internship = mysqli_fetch_assoc($internships)): ?>
             <?=$internship['status'];?>
-            </td>
             <?php endwhile;?>
-
-            <td><a href="studentDetails.php"><button type="button" class="btn btn-primary">View Details</button></a> </td>
-        </tr>
+                
+            <?php if (mysqli_num_rows($internships) === 0): ?>
+            <!-- Display your "else" message here -->
+            <p>(Waiting student response)</p>
+            <?php endif; ?>
+            </td>
+            <?php
+                echo '<td><a href="studentDetails.php?studentID=' . $studentID . '"><button type="button" class="btn btn-primary">View Details</button></a></td>';
+                ?>
+</tr>
     <?php endwhile;?>
    </table>
   </div>
