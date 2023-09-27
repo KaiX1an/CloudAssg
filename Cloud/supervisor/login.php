@@ -66,7 +66,7 @@
 				}
 				if($_SESSION['email'] = $email){
 					echo "<script>alert('You logged in successfully!')</script>";
-					echo "<script>window.open('studentList.php','_blank')</script>";
+					echo "<script>window.open('studentList.php','_self')</script>";
 				}
 				// $ip = getIp();
 				// $sel_cart = "SELECT * FROM cart WHERE ip_add = '$ip'";
