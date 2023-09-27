@@ -48,7 +48,7 @@
 				if($check_supervisor > 0){
 					$_SESSION['supervisorEmail'] = $supervisorEmail;
 					echo "<script>alert('You logged in successfully!')</script>";
-					echo "<script>window.open('index.php','_self')</script>";
+					echo "<script>window.open('supervisor/studentList.php','_self')</script>";
 				}else{
 					$_SESSION['supervisorEmail'] = $supervisorEmail;
 					echo "<script>alert('You logged in successfully!')</script>";

@@ -76,12 +76,12 @@
 			$_SESSION['supervisorEmail'] = $supervisorEmail;
 
 			echo "<script>alert('Account has been created successfully')</script>";
-			echo "<script>window.open('myaccount.php','_self')</script>";
+			echo "<script>window.open('supervisor/myaccount.php','_self')</script>";
 		}else{
 			$_SESSION['supervisorEmail'] = $supervisorEmail;
 
 			echo "<script>alert('Account has been created successfully')</script>";
-			echo "<script>window.open('index.php','_self')</script>";
+			echo "<script>window.open('supervisor/studentList.php','_self')</script>";
 		}
 	}
 ?>

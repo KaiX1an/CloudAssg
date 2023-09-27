@@ -1,5 +1,5 @@
 <?php 
-	include('core/init.php');
+	include('../core/init.php');
 ?>
 <div class="container-fluid p-2">
 	<div class="card">
@@ -24,12 +24,12 @@
 	</div>
 </div>
 <?php
-	$email = $_SESSION['email'];
+	$supervisorEmail = $_SESSION['supervisorEmail'];
 	if(isset($_POST['yes'])){
-		$delete_student = "DELETE FROM student WHERE email = '$email'";
-		$run_delete = $db->query($delete_student);
+		$delete_supervisor = "DELETE FROM supervisor WHERE email = '$supervisorEmail'";
+		$run_delete = $db->query($delete_supervisor);
 		echo "<script>alert('Your account has been deleted successfully!')</script>";
-		echo "<script>window.open('index.php', '_self')</script>";
+		echo "<script>window.open('../index.php', '_self')</script>";
                 session_destroy();
 	}
 	if(isset($_POST['no'])){
