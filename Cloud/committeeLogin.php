@@ -19,9 +19,6 @@
 					<label for="committeePassword">Password</label>
 				</div>
 				<div class="p-3">
-					<div class="float-left">
-						<p class="">Forgot your password? <a href="checkout.php?forgot_pass">Click here</a></p>
-					</div>
 					<div class="float-right">
 						<p class="">Don't have an account? <a href="committeeRegister.php">Register now</a></p>
 					</div>
@@ -51,7 +48,7 @@
                                     $_SESSION['committeeID'] = $id['committeeID'];
                                 endwhile;
 					echo "<script>alert('You logged in successfully!')</script>";
-					echo "<script>window.open('supervisor/studentList.php','_self')</script>";
+					echo "<script>window.open('committee/home.php','_self')</script>";
 				}else{
 					$_SESSION['committeeEmail'] = $committeeEmail;
 					echo "<script>alert('You logged in successfully!')</script>";

@@ -122,8 +122,10 @@
             <?php if ($status=="Pending Approval"): ?>
             <div class="row">
                 <div class="col-md-6 m-4">
-                    <button type="button" class="btn btn-primary" width="100%">Approve</button>
-                    <button type="button" class="btn btn-primary" width="100%">Reject</button>
+                    <a href="updateInternship.php?studentID=<?php echo $student['studentID']; ?>&status=Approved">
+                        <button type="submit" name="approve" class="btn btn-primary" width="100%">Approve</button></a>
+                    <a href="updateInternship.php?studentID=<?php echo $student['studentID']; ?>&status=Rejected">
+                        <button type="submit" name="reject" class="btn btn-primary" width="100%">Reject</button></a>
                 </div>
             </div>
  <?php endif; ?>
@@ -131,4 +133,5 @@
 
 </div>
     </div> 
+    
 

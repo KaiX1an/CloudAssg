@@ -44,6 +44,12 @@
           <li class="nav-item">
             <a class="nav-link" href="progressReportList.php">Log Out</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="myaccount.php">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Logout</a>
+          </li>
           <?php 
 //            if(!isset($_SESSION['email'])){
 //              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
