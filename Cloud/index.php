@@ -5,7 +5,7 @@
 ?>
 
 <?php 
-  $sql = "SELECT * FROM internship";
+  $sql = "SELECT * FROM student";
   $internships = $db->query($sql);
 ?>
 <main>
