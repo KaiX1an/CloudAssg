@@ -15,12 +15,72 @@
 	$email = $_SESSION['email'];
 	$sql = "SELECT * FROM student WHERE email = '$email'";
     $result = $db->query($sql);
-    while ($row_pro = mysqli_fetch_array($result)) {
+    $check_customer = mysqli_num_rows($result);
+    if($check_customer == 0){
+            $cus_id = '-';
+          $cus_name = '-';
+          $cus_email = '-';
+          $cus_course = '-';
+    }			
+    if($check_customer > 0){
+             while ($row_pro = mysqli_fetch_array($result)) {
           $cus_id = $row_pro['studentID'];
           $cus_name = $row_pro['name'];
           $cus_email = $row_pro['email'];
           $cus_course = $row_pro['course'];
     }
+    }
+   
+    $sql2 = "SELECT * FROM student WHERE email = '$email'";
+    $result2 = $db->query($sql2);
+    $check_customer2 = mysqli_num_rows($result2);
+    if($check_customer2 == 0){
+          $internStudID = '-';
+            $intern_supervisor = '-';
+    }			
+    if($check_customer2 > 0){
+          while($row_pro = mysqli_fetch_array($result2)){
+            $internStudID = $row_pro['studentID'];
+            $intern_supervisor = $row_pro['supervisorID'];
+            }
+    }
+                
+    $sql4 = "SELECT * FROM supervisor WHERE supervisorID = '$intern_supervisor'";
+    $result4 = $db->query($sql4);
+    $check_customer4 = mysqli_num_rows($result4);
+    if($check_customer4 == 0){
+          $supervisor_name = '-';
+    }			
+    if($check_customer4 > 0){
+          while($row_pro = mysqli_fetch_array($result4)){
+        $supervisor_name = $row_pro['name'];
+    }
+    }
+    
+    
+    $sql3 = "SELECT * FROM internship WHERE studentID = '$internStudID'";
+    $result3 = $db->query($sql3);
+    $check_customer3 = mysqli_num_rows($result3);
+    if($check_customer3 == 0){
+           $intern_id = '-';
+          $intern_name = '-';
+          $intern_location = '-';
+          $intern_startDate = '-';
+          $intern_endDate = '-';
+          $intern_status = '-';
+    }			
+    if($check_customer3 > 0){
+        while ($row_pro = mysqli_fetch_array($result3)) {
+          $intern_id = $row_pro['internshipID'];
+          $intern_name = $row_pro['companyName'];
+          $intern_location = $row_pro['location'];
+          $intern_startDate = $row_pro['startDate'];
+          $intern_endDate = $row_pro['endDate'];
+          $intern_status = $row_pro['status'];
+    }
+    }
+       
+    
 ?>
 <html lang="en">
 <head>
@@ -86,23 +146,23 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                         <th><i class='fa fa-building prefix px-2'></i><b>Company Name: </b></th>
-                                                                                        <td></td>
+                                                                                        <td>$intern_name</td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                         <th><i class='fa fa-location-arrow prefix px-2'></i><b>Company Location: </b></th>
-                                                                                        <td></td>
+                                                                                        <td>$intern_location</td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                         <th><i class='fa fa-calendar prefix px-2'></i><b>Start Date: </b></th>
-                                                                                        <td></td>
+                                                                                        <td>$intern_startDate</td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                         <th><i class='fa fa-calendar prefix px-2'></i><b>End Date: </b></th>
-                                                                                        <td></td>
+                                                                                        <td>$intern_endDate</td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                         <th><i class='fa fa-address-card prefix px-2'></i><b>Supervisor Name: </b></th>
-                                                                                        <td></td>
+                                                                                        <td>$supervisor_name</td>
                                                                                 </tr>
 									</table>
 								</div>
