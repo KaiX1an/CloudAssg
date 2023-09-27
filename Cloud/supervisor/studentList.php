@@ -41,7 +41,7 @@
                 
             <?php if (mysqli_num_rows($internships) === 0): ?>
             <!-- Display your "else" message here -->
-            <p>(Waiting student response)</p>
+            <p>--Waiting student response--</p>
             <?php endif; ?>
             </td>
             <?php

@@ -4,7 +4,7 @@
   include('includes/header.php');
 ?>
 
-<h2 class="text-center">Student Internship List</h2>
+<h2 class="text-center"> </h2>
 
 <div class="row">
 <?php 
@@ -44,17 +44,10 @@
 ?>
     <div class="col-md-8">
         <div class="card m-4 p-4">
-            <table width="100%">
+            <table width="100%" class="table">
             <?php while($student = mysqli_fetch_assoc($students)): ?>
                 <tr>
-                    <td width="30%">Student ID</td>
-                    <td width="5%">:</td>
-                    <td width="60%"> <?=$student['studentID'];?></td>
-                </tr>
-                <tr>
-                    <td>Student Name</td>
-                    <td>:</td>
-                    <td> <?=$student['name'];?></td>
+                    <td colspan="3"><h4><?=$student['studentID'];?>&nbsp;&nbsp;<?=$student['name'];?></h4></td>
                 </tr>
                 <tr>
                     <td>Student Email</td>
@@ -72,16 +65,15 @@
         
         
         <div class="card m-4 p-4">
-            
 <?php 
   $sql = "SELECT * FROM internship WHERE studentID = '$selectedStudent'";
   $internships = $db->query($sql);
 ?>
             
-            <table width="100%">
+            <table width="100%" class="table table-striped">
             <?php while($student = mysqli_fetch_assoc($internships)): ?>
                 <tr>
-                    <td width="30%">Internship ID</td>
+                    <td width="25%">Internship ID</td>
                     <td width="5%">:</td>
                     <td width="60%"> <?=$student['internshipID'];?></td>
                 </tr>
@@ -110,6 +102,21 @@
                     <td>:</td>
                     <td>  <?=$student['status'];?></td>
                 </tr>
+                <tr>
+                    <td>Company Acceptance Letter</td>
+                    <td>:</td>
+                    <td><a href="" target="_blank" style="color:blue;text-decoration: underline;">View Company Acceptance Letter</a></td>
+                </tr>
+                <tr>
+                    <td>Indemnity Letter</td>
+                    <td>:</td>
+                    <td><a href="" target="_blank" style="color:blue;text-decoration: underline;">View Indemnity Letter</td>
+                </tr>
+                <tr>
+                    <td>Parent Acknowledgement Letter</td>
+                    <td>:</td>
+                    <td><a href="" target="_blank" style="color:blue;text-decoration: underline;">View Parent Acknowledgement Letter</a></td>
+                </tr>
             </table>
             <?php $status =$student['status'];?>
             <?php if ($status=="Pending Approval"): ?>
@@ -122,7 +129,6 @@
  <?php endif; ?>
             <?php endwhile;?>
 
-    </div>
 </div>
     </div> 
 
