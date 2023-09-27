@@ -55,7 +55,7 @@
                 echo "
                 <li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>Student</a></li>
                 <li class='nav-item'><a href='supervisorLogin.php' class='nav-link' style='border-radius: 10em;'>Supervisor</a></li>
-                <li class='nav-item'><a href='' class='nav-link' style='border-radius: 10em;'>Committee</a>
+                <li class='nav-item'><a href='committeeLogin.php' class='nav-link' style='border-radius: 10em;'>Committee</a>
                 ";
               }
               else{
