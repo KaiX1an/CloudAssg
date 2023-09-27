@@ -32,18 +32,6 @@
           <li class="nav-item">
             <a class="nav-link" href="studentList.php">Students</a>
           </li>
-<!--          <li class="nav-item">
-            <a class="nav-link" href="offerLetterList.php">Offer Letter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="progressReportList.php">Progress Report</a>
-          </li>-->
-          <li class="nav-item">
-            <a class="nav-link" href="offerLetterList.php">My Account</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="progressReportList.php">Log Out</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="myaccount.php">My Account</a>
           </li>
