@@ -47,6 +47,9 @@
 				}			
 				if($check_supervisor > 0){
 					$_SESSION['supervisorEmail'] = $supervisorEmail;
+                                        while($id = mysqli_fetch_assoc($runSql)):
+                                    $_SESSION['supervisorID'] = $id['supervisorID'];
+                                endwhile;
 					echo "<script>alert('You logged in successfully!')</script>";
 					echo "<script>window.open('supervisor/studentList.php','_self')</script>";
 				}else{
