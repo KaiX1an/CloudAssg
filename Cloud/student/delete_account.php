@@ -26,14 +26,15 @@
 <?php
 	$email = $_SESSION['email'];
 	if(isset($_POST['yes'])){
-		$ip = getIp();
-		$delete_customer = "DELETE FROM customers WHERE email = '$email'";
-		$run_delete = $db->query($delete_customer);
+		$delete_student = "DELETE FROM student WHERE email = '$email'";
+		$run_delete = $db->query($delete_student);
 		echo "<script>alert('Your account has been deleted successfully!')</script>";
 		echo "<script>window.open('index.php', '_self')</script>";
+                session_destroy();
 	}
 	if(isset($_POST['no'])){
 		echo "<script>alert('We are glad you are with us!')</script>";
 		echo "<script>window.open('myaccount.php', '_self')</script>";
 	}
+        
 ?>

@@ -3,21 +3,16 @@
 ?>
 <?php
 	$email = $_SESSION['email'];
-	$sql = "SELECT * FROM customers WHERE email = '$email'";
+	$sql = "SELECT * FROM student WHERE email = '$email'";
     $result = $db->query($sql);
     while ($row_pro = mysqli_fetch_array($result)) {
-          $cus_id = $row_pro['id'];
-          $cus_name = $row_pro['fullname'];
+          $cus_id = $row_pro['studentID'];
+          $cus_name = $row_pro['name'];
           $cus_email = $row_pro['email'];
-          $cus_address1 = $row_pro['address1'];
-          $cus_address2 = $row_pro['address2'];
-          $cus_city = $row_pro['city'];
-          $cus_state = $row_pro['state'];
-          $cus_zipcode = $row_pro['zipcode'];
-          $cus_phone = $row_pro['phone'];
-          $cus_country = $row_pro['country'];
     }
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <div class="container-fluid p-2">
 	<div class="card">
 		<div class="card-header">
@@ -32,41 +27,17 @@
 				              <input type="text" id="fullname" class="form-control form-control-sm" name="fullname" value="<?php echo $cus_name;?>">
 				              <label for="fullname">Full Name</label>
 				            </div>
-				            <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
+                                                    <div class="md-form form-sm"><i class="fa fa-book prefix"></i>
+                                                        <input type="text" id="course" class="form-control form-control-sm" name="course" value="<?php echo $cus_course;?>">
+                                                        <label for="course">Course</label>
+                                                    </div>
+						</div>
+                                            <div class="col-md-6">
+                                                <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
 				              <input type="email" id="email" class="form-control form-control-sm" name="email" value="<?php echo $cus_email;?>">
 				              <label for="email">Email</label>
 				            </div>
-				            <div class="md-form form-sm"> <i class="fa fa-map prefix"></i>
-				              <input type="text" id="address1" class="form-control form-control-sm" name="address1" value="<?php echo $cus_address1;?>">
-				              <label for="address1">Address1</label>
-				            </div>
-							<div class="md-form form-sm"> <i class="fa fa-map-marker prefix"></i>
-				              <input type="text" id="address2" class="form-control form-control-sm" name="address2" value="<?php echo $cus_address2;?>">
-				              <label for="address2">Address2</label>
-				            </div>
-						</div>
-						<div class="col-md-6">
-				            <div class="md-form form-sm"> <i class="fa fa-map-marker prefix"></i>
-				              <input type="text" id="city" class="form-control form-control-sm" name="city" value="<?php echo $cus_city;?>">
-				              <label for="city">City</label>
-				            </div>
-				            <div class="md-form form-sm"> <i class="fa fa-map-marker prefix"></i>
-				              <input type="text" id="state" class="form-control form-control-sm" name="state" value="<?php echo $cus_state;?>">
-				              <label for="state">State</label>
-				            </div>
-				            <div class="md-form form-sm"> <i class="fa fa-map-marker prefix"></i>
-				              <input type="text" id="zipcode" class="form-control form-control-sm" name="zipcode" value="<?php echo $cus_zipcode;?>">
-				              <label for="zipcode">Zipcode</label>
-				            </div>
-				            <div class="md-form form-sm"> <i class="fa fa-phone prefix"></i>
-				              <input type="text" id="phone" class="form-control form-control-sm" name="phone" value="<?php echo $cus_phone;?>">
-				              <label for="phone">Phone</label>
-				            </div>
-				            <div class="md-form form-sm"> <i class="fa fa-map-marker prefix"></i>
-				              <input type="text" id="country" class="form-control form-control-sm" name="country" value="India">
-				              <label for="country">Country</label>
-				            </div>
-						</div>
+                                            </div>
 						<div class="text-center mt-4">
 			              	<button class="btn btn-default" type="submit" name="update">Update <i class="fa fa-paper-plane-o ml-1"></i></button>
 			            </div>					
@@ -76,7 +47,22 @@
 		</div>
 	</div>
 </div>
+<script>
+$(document).ready(function() {
+    // Function to handle label behavior for input fields
+    function handleLabel(inputField) {
+        // Check if the input has a value
+        if (inputField.val() !== '') {
+            // If it has a value, add a class to move the label up
+            inputField.siblings('label').addClass('active');
+        }
+    }
 
+    handleLabel($('#fullname'));
+    handleLabel($('#email'));
+    handleLabel($('#course'));
+});
+</script>
 <?php
 	if(isset($_POST['update'])){
 		$ip = getIp();

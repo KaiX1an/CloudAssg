@@ -54,7 +54,8 @@
               if(!isset($_SESSION['email'])){
                 echo "
                 <li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>Student</a></li>
-                <li class='nav-item'><a href='supervisor/login.php' class='nav-link' style='border-radius: 10em;'>Supervisor</a></li>
+                <li class='nav-item'><a href='supervisorLogin.php' class='nav-link' style='border-radius: 10em;'>Supervisor</a></li>
+                <li class='nav-item'><a href='' class='nav-link' style='border-radius: 10em;'>Committee</a>
                 ";
               }
               else{
