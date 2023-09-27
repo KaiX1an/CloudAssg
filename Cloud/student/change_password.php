@@ -33,12 +33,11 @@
 	
 	$email = $_SESSION['email'];
 	if(isset($_POST['update_password'])){
-		$ip = getIp();
 		$current_password = $_POST['current'];
 		$new_password = $_POST['new'];
 		$confirm_password = $_POST['confirm'];
 
-		$sqlPass = "SELECT * FROM customers WHERE password = '$current_password' AND email = '$email'";
+		$sqlPass = "SELECT * FROM student WHERE password = '$current_password' AND email = '$email'";
 		$runPass = $db->query($sqlPass);
 		$checkPass = mysqli_num_rows($runPass);
 		if($checkPass == 0){
@@ -50,7 +49,7 @@
 			exit();
 		}
 		else{
-			$updatePassword = "UPDATE customers SET password = '$new_password' WHERE email = '$email'";
+			$updatePassword = "UPDATE student SET password = '$new_password' WHERE email = '$email'";
 			$runUpdate = $db->query($updatePassword);
 			echo "<script>alert('Your password has been updated successfully!')</script>";
 			echo "<script>window.open('myaccount.php','_self')</script>";

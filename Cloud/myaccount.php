@@ -13,19 +13,13 @@
 
 <?php
 	$email = $_SESSION['email'];
-	$sql = "SELECT * FROM customers WHERE email = '$email'";
+	$sql = "SELECT * FROM student WHERE email = '$email'";
     $result = $db->query($sql);
     while ($row_pro = mysqli_fetch_array($result)) {
-          $cus_id = $row_pro['id'];
-          $cus_name = $row_pro['fullname'];
+          $cus_id = $row_pro['studentID'];
+          $cus_name = $row_pro['name'];
           $cus_email = $row_pro['email'];
-          $cus_address1 = $row_pro['address1'];
-          $cus_address2 = $row_pro['address2'];
-          $cus_city = $row_pro['city'];
-          $cus_state = $row_pro['state'];
-          $cus_zipcode = $row_pro['zipcode'];
-          $cus_phone = $row_pro['phone'];
-          $cus_country = $row_pro['country'];
+          $cus_course = $row_pro['course'];
     }
 ?>
 <html lang="en">
@@ -56,9 +50,6 @@
 	        <!-- Links -->
 		        <ul class="navbar-nav mr-auto smooth-scroll">
           			<li class="nav-item">
-            			<a class="nav-link" href="myaccount.php?edit_account">Edit Account</a>
-          			</li>
-          			<li class="nav-item">
             			<a class="nav-link" href="myaccount.php?change_password">Change Password</a>
           			</li>
           			<li class="nav-item">
@@ -82,33 +73,37 @@
 									<table class='table table-striped table-condensed' style='display: table'>
 										
 										<tr>
-											<th><b>Name: </b></th>
+											<th style='width:15%;'><i class='fa fa-user prefix px-2'></i><b> Name: </b></th>
 											<td>$cus_name</td>
 										</tr>
 										<tr>
-											<th><b>Phone: </b></th>
-											<td>$cus_phone</td>
-										</tr>
-										<tr>
-											<th><b>Email: </b></th>
+											<th><i class='fa fa-envelope prefix px-2'></i><b>Email: </b></th>
 											<td>$cus_email</td>
 										</tr>
-										<tr>
-											<th><b>Address: </b></th>
-											<td>$cus_address1,  $cus_address2</td>
-										</tr>
-										<tr>
-											<th><b>City: </b></th>
-											<td>$cus_city</td>
-										</tr>
-										<tr>
-											<th><b>State: </b></th>
-											<td>$cus_state</td>
-										</tr>
-										<tr>
-											<th><b>Zipcode: </b></th>
-											<td>$cus_zipcode</td>
-										</tr>
+                                                                                <tr>
+                                                                                        <th><i class='fa fa-book prefix px-2'></i><b>Course: </b></th>
+                                                                                        <td>$cus_course</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <th><i class='fa fa-building prefix px-2'></i><b>Company Name: </b></th>
+                                                                                        <td></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <th><i class='fa fa-location-arrow prefix px-2'></i><b>Company Location: </b></th>
+                                                                                        <td></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <th><i class='fa fa-calendar prefix px-2'></i><b>Start Date: </b></th>
+                                                                                        <td></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <th><i class='fa fa-calendar prefix px-2'></i><b>End Date: </b></th>
+                                                                                        <td></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <th><i class='fa fa-address-card prefix px-2'></i><b>Supervisor Name: </b></th>
+                                                                                        <td></td>
+                                                                                </tr>
 									</table>
 								</div>
 							</div>
