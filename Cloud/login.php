@@ -6,8 +6,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
 function activateLabel(inputElement, labelElement) {
     // Detect when the input field is focused
