@@ -65,10 +65,10 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
               <?php endif;?>
               
               <?php if(mysqli_num_rows($sups) <= 0): ?>
-                    <td>-- Not Assigned --</td>
-                    <td>-- Not Assigned --</td>
-                    <td>-- Not Assigned --</td>
-                    <td>-- Not Assigned --</td>
+                    <td>- Not Assigned -</td>
+                    <td>- Not Assigned -</td>
+                    <td>- Not Assigned -</td>
+                    <td>- Not Assigned -</td>
                         <td><a href="editSupervisor.php?studID=<?=$retStudentID;?>"><button type="button" class="btn btn-primary">Edit</button></a> </td>
               <?php endif;?>
               
@@ -112,12 +112,12 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
               
               <?php if(mysqli_num_rows($inDets) <= 0): ?>
                     <tr>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
                     </tr>
               <?php endif;?>
          </table>
@@ -156,11 +156,11 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
               
               <?php if(mysqli_num_rows($inDets) <= 0): ?>
                     <tr>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
                     </tr>
               <?php endif;?>
          </table>
@@ -200,11 +200,11 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
               
               <?php if(mysqli_num_rows($prgs) <= 0): ?>
                     <tr>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
-                        <td>-- Pending Placement --</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
+                        <td>- Waiting Student Response -</td>
                     </tr>
               <?php endif;?>
          </table>

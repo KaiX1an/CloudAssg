@@ -10,6 +10,7 @@
 ?>
 <main>
   <h3 class="text-center p-3">List of Internships</h3>
+  
   <div class="container-fluid row">
     <!-- List of Internships -->
     <?php while($internship = mysqli_fetch_assoc($internships)): ?>

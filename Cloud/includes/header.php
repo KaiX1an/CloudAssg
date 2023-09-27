@@ -80,3 +80,4 @@
     </nav>
     <!--/.Navbar -->
   </header>
+    <img src="../img/sample.jpg" alt=""/>
