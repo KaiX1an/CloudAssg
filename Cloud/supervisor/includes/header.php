@@ -26,7 +26,7 @@
   <header>
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-      <a class="navbar-brand" href="studentList.php">TARUMT</a>
+      <img src="../committee/includes/logo.png" width="150px" alt=""/>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="internship.php">Internship</a>
+            <a class="nav-link" href="studentList.php">Student</a>
           </li>
           <?php 
             if(!isset($_SESSION['supervisorEmail'])){
