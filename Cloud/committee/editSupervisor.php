@@ -8,18 +8,14 @@
 
     $retStudentID = $_GET['studID'];
 //    $sql = "SELECT * FROM student WHERE studentID = '$retStudentID'";
-    $sql = "SELECT student.*, COALESCE(supervisor.name, '-- Not Assigned --') AS supName
+    $sql = "SELECT student.*, COALESCE(supervisor.name, '- Not Assigned -') AS supName
             FROM student
             LEFT JOIN supervisor ON student.supervisorID = supervisor.supervisorID
             WHERE studentID = '$retStudentID'";
     $students = $db->query($sql);
 ?>
 
-<?php 
-//  if(!isset($_SESSION['email'])){
-//      echo "<script>window.open('login.php','_self')</script>";
-//    }else{
-?>
+
   
     <main>
         <h3 class="text-center p-3">Edit Supervisor</h3>
@@ -65,75 +61,41 @@
               <tr>
                 <form action="#" method="post">
                   <td> 
-                      <select style="width: 300px; height: 30px" name="supervisorIDSelected">  
-                        <option selected="true" value="f" disabled="disabled">-- Select --</option>
-                        <?php while($sup = mysqli_fetch_assoc($sups)): ?>
-                            <option value="<?=$sup['supervisorID'];?>"><?=$sup['supervisorID'];?> - <?=$sup['name'];?></option>
-                        <?php endwhile;?>
-                    </select> 
+                        <select style="width: 300px; height: 30px" name="supervisorIDSelected">  
+                        <option selected="true" disabled="disabled">-- Select --</option>
+                            <?php while($sup = mysqli_fetch_assoc($sups)): ?><option value="<?=$sup['supervisorID'];?>"><?=$sup['supervisorID'];?> - <?=$sup['name'];?></option><?php endwhile;?></select> 
                   </td>
                   <!--<td><a href="studentDetails.php"><button type="button" class="btn btn-primary">Confirm</button></a> </td>-->
                   <td>
-                      
                         <input type="submit" value="Update" onclick="return confirm('Are you sure?');" >
                         <input type="hidden" name="confirm_update" value="yes">
                         
                   </td>
                 </form>
               </tr>
-              
-              
-              
-                <?php   
-                        
-
+<?php   
                         if(isset($_POST["confirm_update"]) && $_POST["confirm_update"] == "yes") {
-                            
-                            
+                          
                             if (isset($_POST['supervisorIDSelected'])){ 
                                 
-                                
-                            
                                 $selectedSupervisorID = $_POST['supervisorIDSelected'];  // Storing Selected Value In Variable
                                 // Execute the SQL update operation here
                                 $sqlUpdateSup = "UPDATE `student` SET `supervisorID`='$selectedSupervisorID' WHERE `studentID` = '$retStudentID'";
                                 $students = $db->query($sqlUpdateSup);
                             
-                                header("Location: editSupervisor.php?studID=$retStudentID");
-                                exit;
+                                echo "<script>window.open('studentDetails.php?studID=$retStudentID','_self')</script>";
                             }    
                              else{
                                 echo '<script>alert("Please select supervisor.")</script>';
                             }
                         } 
-                       
-                        
-                        
-//                        echo '<script>alert("Are you sure?")</script>';
-//                        if(confirm("Are you sure?")){
-//                            $sqlUpdateSup = "UPDATE `student` SET `supervisorID`='$selectedSupervisorID' WHERE `studentID` = '$retStudentID'";
-//                            $students = $db->query($sqlUpdateSup);
-//                        }
-                        
-                        
-                        
-                        
-                        
-                    
-                ?>
-              
-              
+?>
          </table>
         </div>
         <br>
         
         
               
-              
-        <?php /*
-              <?php endif; ?>
-          <?php endwhile;?>
-        */ ?>
          </table>
         </div>
         <br>

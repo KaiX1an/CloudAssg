@@ -9,7 +9,7 @@
           <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
         </div>
         <!--Grid column-->
-
+        
         <!--Grid column-->
         <div class="col-md-6 col-lg-7 text-center text-md-right">
             <!--Facebook-->
