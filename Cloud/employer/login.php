@@ -57,7 +57,7 @@
 				$email = $_POST['email'];
 				$password = $_POST['password'];
 
-				$sql = "SELECT * FROM employer WHERE password = '$password' AND email = '$email'";
+				$sql = "SELECT * FROM supervisor WHERE password = '$password' AND email = '$email'";
 				$runSql = $db->query($sql);
 				$check_user = mysqli_num_rows($runSql);
 				if($check_user == 0){
@@ -66,7 +66,7 @@
 				}
 				if($_SESSION['email'] = $email){
 					echo "<script>alert('You logged in successfully!')</script>";
-					echo "<script>window.open('index.php','_self')</script>";
+					echo "<script>window.open('studentList.php','_blank')</script>";
 				}
 				// $ip = getIp();
 				// $sel_cart = "SELECT * FROM cart WHERE ip_add = '$ip'";

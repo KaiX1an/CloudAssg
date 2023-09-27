@@ -1,5 +1,5 @@
 <?php 
-	include('core/init.php');
+	include('../core/init.php');
 ?>
 <div class="container-fluid p-2">
 	<div class="card">
@@ -31,13 +31,13 @@
 </div>
 <?php
 	
-	$email = $_SESSION['email'];
+	$supervisorEmail = $_SESSION['supervisorEmail'];
 	if(isset($_POST['update_password'])){
 		$current_password = $_POST['current'];
 		$new_password = $_POST['new'];
 		$confirm_password = $_POST['confirm'];
 
-		$sqlPass = "SELECT * FROM student WHERE password = '$current_password' AND email = '$email'";
+		$sqlPass = "SELECT * FROM supervisor WHERE password = '$current_password' AND email = '$supervisorEmail'";
 		$runPass = $db->query($sqlPass);
 		$checkPass = mysqli_num_rows($runPass);
 		if($checkPass == 0){
@@ -49,7 +49,7 @@
 			exit();
 		}
 		else{
-			$updatePassword = "UPDATE student SET password = '$new_password' WHERE email = '$email'";
+			$updatePassword = "UPDATE supervisor SET password = '$new_password' WHERE email = '$supervisorEmail'";
 			$runUpdate = $db->query($updatePassword);
 			echo "<script>alert('Your password has been updated successfully!')</script>";
 			echo "<script>window.open('myaccount.php','_self')</script>";
