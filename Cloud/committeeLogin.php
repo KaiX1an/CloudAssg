@@ -3,6 +3,38 @@
 	include 'includes/header.php';
 	include 'core/init.php';
 ?>
+
+<script>
+function activateLabel(inputElement, labelElement) {
+    // Detect when the input field is focused
+    inputElement.focus(function() {
+        // Add the 'active' class to the label
+        labelElement.addClass('active');
+    });
+
+    // Detect when the input field loses focus
+    inputElement.blur(function() {
+        // Check if the input field is empty
+        if ($(this).val() === '') {
+            // Remove the 'active' class from the label
+            labelElement.removeClass('active');
+        }
+    });
+
+    // Check on page load if the input field has content
+    if (inputElement.val() !== '') {
+        // Add the 'active' class to the label
+        labelElement.addClass('active');
+    }
+}
+
+$(document).ready(function() {
+    // Use the activateLabel function for specific inputs and labels
+    activateLabel($('#committeeEmail'), $('label[for="committeeEmail"]'));
+    activateLabel($('#committeePassword'), $('label[for="committeePassword"]'));
+});
+</script>
+
 <div class="container p-3">
 	<div class="card">
 		<div class="card-header">
