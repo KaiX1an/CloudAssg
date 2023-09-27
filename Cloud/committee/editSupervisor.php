@@ -83,8 +83,7 @@
                                 $sqlUpdateSup = "UPDATE `student` SET `supervisorID`='$selectedSupervisorID' WHERE `studentID` = '$retStudentID'";
                                 $students = $db->query($sqlUpdateSup);
                             
-                                header("Location: studentDetails.php?studID=$retStudentID");
-                                exit;
+                                echo "<script>window.open('studentDetails.php?studID=$retStudentID','_self')</script>";
                             }    
                              else{
                                 echo '<script>alert("Please select supervisor.")</script>';
