@@ -178,9 +178,9 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
                 <?php while($inDoc = mysqli_fetch_assoc($inDocs)): ?>
                     <tr>
                         <td><?=$inDoc['reportID'];?></td>
-                        <td><a class="text-primary" href="<?php echo $inDoc['indemnityReport'];?>" target="_blank" download><u><?php echo $inDoc['indemnityReport'];?></u></a></td>
-                        <td><a class="text-primary" href="<?php echo $inDoc['companyAccLetter'];?>" target="_blank" download><u><?php echo $inDoc['companyAccLetter'];?></u></a></td>
-                        <td><a class="text-primary" href="<?php echo $inDoc['parentAck'];?>" target="_blank" download><u><?php echo $inDoc['parentAck'];?></u></a></td>
+                        <td><a class="text-primary" href="../<?php echo $inDoc['indemnityReport'];?>" target="_blank" download><u><?php echo $inDoc['indemnityReport'];?></u></a></td>
+                        <td><a class="text-primary" href="../<?php echo $inDoc['companyAccLetter'];?>" target="_blank" download><u><?php echo $inDoc['companyAccLetter'];?></u></a></td>
+                        <td><a class="text-primary" href="../<?php echo $inDoc['parentAck'];?>" target="_blank" download><u><?php echo $inDoc['parentAck'];?></u></a></td>
                         <td><?=$inDoc['status'];?></td>
                     </tr>
                 <?php endwhile;?>
