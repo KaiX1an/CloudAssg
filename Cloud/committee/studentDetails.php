@@ -155,9 +155,9 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
         <br>
         
 <?php 
-  $sql4 = "SELECT studentReport.*
-        FROM student, studentReport
-        WHERE student.studentID = studentReport.studentID AND student.studentID = '$retStudentID'";
+  $sql4 = "SELECT studentreport.*
+        FROM student, studentreport
+        WHERE student.studentID = studentreport.studentID AND student.studentID = '$retStudentID'";
     $inDocs = $db->query($sql4);
 ?>
         
@@ -186,7 +186,7 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
                 <?php endwhile;?>
               <?php endif;?>
               
-              <?php if(mysqli_num_rows($inDets) <= 0): ?>
+              <?php if(mysqli_num_rows($inDocs) <= 0): ?>
                     <tr>
                         <td>- Waiting Student Response -</td>
                         <td>- Waiting Student Response -</td>
