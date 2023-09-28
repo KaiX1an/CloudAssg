@@ -10,8 +10,44 @@
     $students = $db->query($sql);
 ?>
   
+    <nav class="mb-1 navbar navbar-expand-lg navbar-light" style="background-color: #b2ede7;position: sticky;width: 100%; top: 0px;">
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+          aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>-->
+        <div id="navbarSupportedContent-333" >
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item mx-5">
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec1', -250)">Student Details</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec2', -250)">Supervisor Details</a>
+              </li>
+              <li class="nav-item mx-5">
+                <!--<a class="nav-link" href="#sec3">Internship Details</a>-->
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec3', -250)">Internship Details</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec4', -250)">Internship Documents</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec5', -250)">Progress Reports</a>
+              </li>
+              <?php 
+    //            if(!isset($_SESSION['email'])){
+    //              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
+    //            }
+    //            else{
+    //              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
+    //              echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
+    //            }
+    //          ?>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <h3 class="text-center p-3">Student Details</h3>
+        <h3 id="sec1" class="text-center p-3">Student Details</h3>
         <div class="m-4 border shadow-sm" width="100%">
           <table class="table">
                 <tr>
@@ -41,7 +77,7 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
     $sups = $db->query($sql2);
 ?>
         
-        <h4 class="text-center pt-3 pb-0">Supervisor Details</h3>
+        <h4 id="sec2" class="text-center pt-3 pb-0">Supervisor Details</h3>
         <div class="m-2 mx-4 border shadow-sm" width="100%">
           <table class="table">
               <tr>
@@ -86,7 +122,7 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
 <!--        
         <h4 class="text-center p-3">Internship Details</h3>
         <div class="m-4 border shadow-sm" width="100%">-->
-        <h4 class="text-center pt-3 pb-0">Internship Details</h3>
+        <h4 id="sec3" class="text-center pt-3 pb-0">Internship Details</h3>
         <div class="m-2 mx-4 border shadow-sm" width="100%">
           <!-- List of Internships -->
           <table class="table">
@@ -135,7 +171,7 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
         
 <!--        <h4 class="text-center p-3">Internship Documents</h3>
         <div class="m-4 border shadow-sm" width="100%">-->
-        <h4 class="text-center pt-3 pb-0">Internship Documents</h3>
+        <h4 id="sec4" class="text-center pt-3 pb-0">Internship Documents</h3>
         <div class="m-2 mx-4 border shadow-sm" width="100%">
           <!-- List of Internships -->
           <table class="table">
@@ -178,7 +214,7 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
     $prgs = $db->query($sql5);
 ?>
         
-        <h4 class="text-center pt-3 pb-0">Progress Reports</h3>
+        <h4 id="sec5" class="text-center pt-3 pb-0">Progress Reports</h3>
         <div class="m-2 mx-4 border shadow-sm" width="100%">
           <!-- List of Internships -->
           <table class="table">
@@ -215,5 +251,16 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
         </div>
         <br>
     </main>
+
+<script>
+    function scrollToSection(sectionId, yOffset) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const yOffsetValue = yOffset || 0; // Set the desired yOffset (in pixels) or use 0 as a default
+            const targetY = section.getBoundingClientRect().top + window.scrollY + yOffsetValue;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
+    }
+</script>
 
 <?php include 'includes/footer.php';  ?>
