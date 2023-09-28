@@ -10,14 +10,18 @@ if (isset($_GET['studentID'])) {
     //echo "$selectedStudent $status";
 
     $sql = "UPDATE internship SET status='$status' WHERE studentID='$selectedStudent'";
+    $sql1 = "UPDATE studentreport SET status='$status' WHERE studentID='$selectedStudent'";
 
     if ($db->query($sql)) {
-         //Update successful
-        echo "<script>alert('Status of student updated successfully.')</script>";
-        echo "<script>window.open('studentList.php','_self')</script>";
+        if($db->query($sql)){
+            //Update successful
+           echo "<script>alert('Status of student updated successfully.')</script>";
+           echo "<script>window.open('studentList.php','_self')</script>";
+        }
     } else {
         // Update failed
         echo "Error updating status: " . $db->error;
     }
 }
+
 ?>
