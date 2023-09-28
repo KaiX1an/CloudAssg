@@ -5,6 +5,7 @@
 ?>
 
 <?php 
+echo "<script>window.open('login.php','_self')</script>";
   $sql = "SELECT * FROM internship";
   $internships = $db->query($sql);
 ?>

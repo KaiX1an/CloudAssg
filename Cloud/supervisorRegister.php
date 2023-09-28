@@ -5,6 +5,40 @@
 
 ?>
 
+<script>
+function activateLabel(inputElement, labelElement) {
+    // Detect when the input field is focused
+    inputElement.focus(function() {
+        // Add the 'active' class to the label
+        labelElement.addClass('active');
+    });
+
+    // Detect when the input field loses focus
+    inputElement.blur(function() {
+        // Check if the input field is empty
+        if ($(this).val() === '') {
+            // Remove the 'active' class from the label
+            labelElement.removeClass('active');
+        }
+    });
+
+    // Check on page load if the input field has content
+    if (inputElement.val() !== '') {
+        // Add the 'active' class to the label
+        labelElement.addClass('active');
+    }
+}
+
+$(document).ready(function() {
+    // Use the activateLabel function for specific inputs and labels
+    activateLabel($('#supervisorFullname'), $('label[for="supervisorFullname"]'));
+    activateLabel($('#supervisorEmail'), $('label[for="supervisorEmail"]'));
+    activateLabel($('#supervisorPassword'), $('label[for="supervisorPassword"]'));
+    activateLabel($('#position'), $('label[for="position"]'));
+    activateLabel($('#department'), $('label[for="department"]'));
+});
+</script>
+
 <div class="container-fluid p-3 col-md-9">
 	<div class="card">
 		<div class="card-header">
@@ -16,23 +50,23 @@
 					<div class="row">					
 						<div class="col-md-12">
 							<div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
-				              <input type="text" id="supervisorFullname" class="form-control form-control-sm" name="supervisorFullname">
+				              <input type="text" id="supervisorFullname" class="form-control form-control-sm" name="supervisorFullname" required>
 				              <label for="supervisorFullname">Full Name</label>
 				            </div>
 				            <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
-				              <input type="email" id="supervisorEmail" class="form-control form-control-sm" name="supervisorEmail">
+				              <input type="email" id="supervisorEmail" class="form-control form-control-sm" name="supervisorEmail" required>
 				              <label for="supervisorEmail">Email</label>
 				            </div>
 				            <div class="md-form form-sm"> <i class="fa fa-lock prefix"></i>
-				              <input type="password" id="supervisorPassword" class="form-control form-control-sm" name="supervisorPassword">
+				              <input type="password" id="supervisorPassword" class="form-control form-control-sm" name="supervisorPassword" required>
 				              <label for="supervisorPassword">Password</label>
 				            </div>
 				            <div class="md-form form-sm"> <i class="fas fa-id-badge prefix"></i>
-				              <input type="text" id="position" class="form-control form-control-sm" name="position">
+				              <input type="text" id="position" class="form-control form-control-sm" name="position" required>
 				              <label for="position">Position</label>
 				            </div>
                                             <div class="md-form form-sm"> <i class="fas fa-building prefix"></i>
-				              <input type="text" id="department" class="form-control form-control-sm" name="department">
+				              <input type="text" id="department" class="form-control form-control-sm" name="department" required>
 				              <label for="department">Department</label>
 				            </div>
 						</div>

@@ -40,13 +40,11 @@ table.dataTable {
     }
   }
   &.order-column, &.display {
-    tbody > tr {
-      &.selected > {
+    tbody > tr.selected {
         .sorting_1, .sorting_2, .sorting_3 {
           background-color: #acbad5;
         }
-      }
-      > .selected {
+      tbody > tr > .selected {
         background-color: #acbad5;
       }
     }

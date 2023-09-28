@@ -38,7 +38,7 @@
 </head>
 <body>
 	<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-      	<a class="navbar-brand" href="home.php"><?=$committee_name;?></a>
+      	<a class="navbar-brand" href="studentList.php"><?=$committee_name;?></a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
         aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
