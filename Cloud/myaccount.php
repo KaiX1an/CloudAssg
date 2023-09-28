@@ -79,7 +79,21 @@
           $intern_status = $row_pro['status'];
     }
     }
-       
+    
+    $sql5 = "SELECT * FROM studentreport WHERE studentID = '$internStudID'";
+    $result5 = $db->query($sql5);
+    $check_customer5 = mysqli_num_rows($result5);
+    
+    while ($row_pro = mysqli_fetch_array($result5)) {
+          $studentreportid = $row_pro['reportID'];
+          $studentreportindem = $row_pro['indemnityReport'];
+          $studentreportcom = $row_pro['companyAccLetter'];
+          $studentreportparent = $row_pro['parentAck'];
+          $studentreportstatus = $row_pro['status'];
+          $studentreportstudid = $row_pro['studentID'];
+    }
+    
+    
     
 ?>
 <html lang="en">
@@ -130,10 +144,13 @@
 									<h3 class='h3-responsive p-2'>Hello $cus_name</h3>
 								</div>
 								<div class='card-body table-responsive'>
+                                                                    <div class='card-header'>
+                                                                        <h3 class='h3-responsive p-2 mb-1'>Personal Information</h3>
+                                                                    </div>
 									<table class='table table-striped table-condensed' style='display: table'>
 										
 										<tr>
-											<th style='width:15%;'><i class='fa fa-user prefix px-2'></i><b> Name: </b></th>
+											<th style='width:20%;'><i class='fa fa-user prefix px-2'></i><b> Name: </b></th>
 											<td>$cus_name</td>
 										</tr>
 										<tr>
@@ -144,6 +161,7 @@
                                                                                         <th><i class='fa fa-book prefix px-2'></i><b>Course: </b></th>
                                                                                         <td>$cus_course</td>
                                                                                 </tr>
+                                                                                
                                                                                 <tr>
                                                                                         <th><i class='fa fa-building prefix px-2'></i><b>Company Name: </b></th>
                                                                                         <td>$intern_name</td>
@@ -184,6 +202,30 @@
 			include 'student/delete_account.php';
 		}
 	?>
+    
+    
+    
+    <div class='card'>
+        <div class='card-body table-responsive'>
+            <div class='card-header'>
+                <h3 class='h3-responsive p-2 mb-1'>Internship Forms</h3>
+            </div>
+            <table class='table table-striped table-condensed' style='display: table'>
+                <tr>
+                    <th style='width:30%;'><i class='fa fa-address-book prefix px-2'></i><b>Indemnity Letter: </b></th>
+                    <td><a href="<?php echo $studentreportindem;?>" target="_blank" style="color:blue;text-decoration: underline;">View Indemnity Letter</a></td>
+                </tr>
+                <tr>
+                    <th><i class='fa fa-pen-nib prefix px-2'></i><b>Company Acceptance Letter: </b></th>
+                    <td><a href="<?php echo $studentreportcom;?>" target="_blank" style="color:blue;text-decoration: underline;">View Company Acceptance Letter</a></td>
+                </tr>
+                <tr>
+                    <th><i class='fa fa-file prefix px-2'></i><b>Parents Acknowledgement Form: </b></th>
+                    <td><a href="<?php echo $studentreportparent;?>" target="_blank" style="color:blue;text-decoration: underline;">View Parents Acknowledgement Form</a></td>
+                </tr>
+            </table>
+        </div>
+        </div>
 </body>
 </html>
 <?php include 'includes/footer.php';?>

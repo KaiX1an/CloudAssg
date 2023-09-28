@@ -7,9 +7,9 @@
 			<h3 class="h3-responsive p-2 text-center">Change Your Password</h3>
 		</div>
 		<div class="card-body">
-			<div class="container-fluid">
-				<form class="p-3 grey-text" method="post" action="" enctype="multipart/form-data">
-					<div class="md-form form-sm"> <i class="fa fa-lock prefix"></i>
+                    <div class="container-fluid">
+			<form class="p-3 grey-text" method="post" action="" enctype="multipart/form-data">
+                            <div class="md-form form-sm"> <i class="fa fa-lock prefix"></i>
 		              	<input type="password" id="password" class="form-control form-control-sm" name="current" required>
 		              	<label for="password">Current Password</label>
 		            </div>
@@ -23,9 +23,9 @@
 		            </div>
 		            <div class="text-center mt-4">
 		              	<button class="btn btn-default" type="submit" name="update_password">Change Password <i class="fa fa-paper-plane-o ml-1"></i></button>
-			        </div>					
-				</form>
-			</div>
+			    </div>					
+                        </form>
+                    </div>
 		</div>
 	</div>
 </div>
