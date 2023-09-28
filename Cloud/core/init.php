@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('databaseintern.cnrbfswqpolq.us-east-1.rds.amazonaws.com', 'admin', 'internship123', 'internship', 3306);
+$db = mysqli_connect('databaseintern.cnrbfswqpolq.us-east-1.rds.amazonaws.com', 'admin', 'internship123', 'internshipDB', 3306);
 if(mysqli_connect_errno()){
 	echo "Database connection failed with following errors: ".mysqli_connect_error();
 	die();
