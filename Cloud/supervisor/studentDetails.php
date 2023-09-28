@@ -102,24 +102,35 @@
                     <td>:</td>
                     <td>  <?=$student['status'];?></td>
                 </tr>
+                <?php 
+                $sql2 = "SELECT * FROM studentreport WHERE studentID = '$selectedStudent'";
+                $files = $db->query($sql2);
+                while($file = mysqli_fetch_assoc($files)): ?>
                 <tr>
                     <td>Company Acceptance Letter</td>
                     <td>:</td>
-                    <td><a href="" target="_blank" style="color:blue;text-decoration: underline;">View Company Acceptance Letter</a></td>
+                    <td><a href="../<?php echo $file['companyAccLetter'];?>" target="_blank" style="color:blue;text-decoration: underline;">View Company Acceptance Letter</a></td>
                 </tr>
                 <tr>
                     <td>Indemnity Letter</td>
                     <td>:</td>
-                    <td><a href="" target="_blank" style="color:blue;text-decoration: underline;">View Indemnity Letter</td>
+                    <td><a href="../<?php echo $file['indemnityReport'];?>" target="_blank" style="color:blue;text-decoration: underline;">View Indemnity Letter</a></td>
                 </tr>
                 <tr>
                     <td>Parent Acknowledgement Letter</td>
                     <td>:</td>
-                    <td><a href="" target="_blank" style="color:blue;text-decoration: underline;">View Parent Acknowledgement Letter</a></td>
+                    <td><a href="../<?php echo $file['parentAck'];?>" target="_blank" style="color:blue;text-decoration: underline;">View Parent Acknowledgement Letter</a></td>
+                </tr>
+                <?php endwhile;
+                ?>
+                <tr>
+                    <td>Progress Report</td>
+                    <td>:</td>
+                    <td><a href="progressReport.php?studentID=<?php echo $student['studentID']; ?>" target="_blank" style="color:blue;text-decoration: underline;">View Progress Report</a></td>
                 </tr>
             </table>
             <?php $status =$student['status'];?>
-            <?php if ($status=="Pending Approval"): ?>
+            <?php if ($status=="Pending"): ?>
             <div class="row">
                 <div class="col-md-6 m-4">
                     <a href="updateInternship.php?studentID=<?php echo $student['studentID']; ?>&status=Approved">
