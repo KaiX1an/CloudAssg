@@ -45,12 +45,12 @@
           <!-- List of students -->
           <table class="table">
               <tr>
-                  <td width="15%">Student ID</td>
-                  <td width="15%">Student Name</td>
-                  <td width="20%">Student Email</td>
-                  <td width="20%">Supervisor Name</td>
-                  <td width="20%">Internship Status</td>
-                  <td width="10%"></td>
+                  <th width="15%" style="font-weight: bold">Student ID</td>
+                  <th width="15%" style="font-weight: bold">Student Name</td>
+                  <td width="20%" style="font-weight: bold">Student Email</td>
+                  <th width="20%" style="font-weight: bold">Supervisor Name</td>
+                  <th width="20%" style="font-weight: bold">Internship Status</td>
+                  <th width="10%" style="font-weight: bold"></td>
               </tr>
               
 <!--              <tr>

@@ -6,18 +6,18 @@
       <div class="row py-3 d-flex align-items-center">
         <!--Grid column-->
         <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+          <h6 class="mb-0 white-text">COPYRIGHT © 2023 TAR UMT. ALL RIGHTS RESERVED</h6>
         </div>
         <!--Grid column-->
         
         <!--Grid column-->
         <div class="col-md-6 col-lg-7 text-center text-md-right">
             <!--Facebook-->
-            <a class="fb-ic" href="https://instagram.com/khadipremium">
+            <a class="fb-ic" href="https://www.facebook.com/tarumtpenang">
               <i class="fab fa-facebook-f white-text mr-3"> </i>
             </a>
             <!--Instagram-->
-            <a class="ins-ic" href="https://instagram.com/khadipremium">
+            <a class="ins-ic" href="https://www.instagram.com/tarumt_penang/">
                 <i class="fab fa-instagram white-text mr-3"> </i>
             </a>
             <!-- Youtube -->
