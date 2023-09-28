@@ -6,8 +6,8 @@ if(mysqli_connect_errno()){
 	die();
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/Cloud/config.php';
-require_once BASEURL.'helpers/helpers.php';
+require_once $_SERVER.'/Cloud/config.php';
+require_once $_SERVER.'helpers/helpers.php';
 /*
 $cart_id = '';
 if(isset($_COOKIE[CART_COOKIE])){
