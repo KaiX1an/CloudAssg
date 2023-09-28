@@ -35,7 +35,7 @@
             <?php 
             $_SESSION['reportID'] = $report['progressID'];
             ?>
-            <?php if($report['marks']=='0'):?>
+            <?php if($report['marks']==0):?>
             <td>
                 <form method="post" action='updateMarks.php?'>
                     <input type="text" id="email" class="form-control form-control-sm" name="marks" required>
