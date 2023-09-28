@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('internshipdb.csbnk3w2oyn3.us-east-1.rds.amazonaws.com', 'admin', 'abcd1234', 'internship', 3306);
+$db = mysqli_connect('databaseintern.cnrbfswqpolq.us-east-1.rds.amazonaws.com', 'admin', 'internship123', 'internship', 3306);
 if(mysqli_connect_errno()){
 	echo "Database connection failed with following errors: ".mysqli_connect_error();
 	die();
@@ -12,7 +12,8 @@ require_once BASEURL.'helpers/helpers.php';
 $cart_id = '';
 if(isset($_COOKIE[CART_COOKIE])){
 	$cart_id = sanitize($_COOKIE[CART_COOKIE]);
-}
+}{
+	$cart_id = sanitize($_CO
 
 if(isset($_SESSION['SBUser'])){
 	$user_id = $_SESSION['SBUser'];
