@@ -1,7 +1,7 @@
 <?php 
 	include('core/init.php');
 ?>
-<div class="container-fluid p-2">
+<div class="container-fluid p-2" style="height: 150%;">
 	<div class="card">
 		<div class="card-header">
 			<h3 class="h3-responsive p-2 text-center">Delete Account?</h3>
