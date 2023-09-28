@@ -161,8 +161,8 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
     $inDocs = $db->query($sql4);
 ?>
         
-<!--        <h4 class="text-center p-3">Internship Documents</h3>
-        <div class="m-4 border shadow-sm" width="100%">-->
+<!--        <h4 class="text-center p-3">Internship Documents</h3>-->
+<!--        <div class="m-4 border shadow-sm" width="100%">-->
         <h4 id="sec4" class="text-center pt-3 pb-0">Internship Documents</h3>
         <div class="m-2 mx-4 border shadow-sm" width="100%">
           <!-- List of Internships -->
