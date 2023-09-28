@@ -216,15 +216,15 @@
            <table class='table table-striped table-condensed' style='display: table'>
                <tr>
                    <th style='width:30%;'><i class='fa fa-address-book prefix px-2'></i><b>Indemnity Letter: </b></th>
-                   <td><a href="<?php echo $studentreportindem;?>" target="_blank" style="color:blue;text-decoration: underline;">View Indemnity Letter</a></td>
+                   <td><a href="../<?php echo $studentreportindem;?>" target="_blank" style="color:blue;text-decoration: underline;">View Indemnity Letter</a></td>
                </tr>
                <tr>
                    <th><i class='fa fa-pen-nib prefix px-2'></i><b>Company Acceptance Letter: </b></th>
-                   <td><a href="<?php echo $studentreportcom;?>" target="_blank" style="color:blue;text-decoration: underline;">View Company Acceptance Letter</a></td>
+                   <td><a href="../<?php echo $studentreportcom;?>" target="_blank" style="color:blue;text-decoration: underline;">View Company Acceptance Letter</a></td>
                </tr>
                <tr>
                    <th><i class='fa fa-file prefix px-2'></i><b>Parents Acknowledgement Form: </b></th>
-                   <td><a href="<?php echo $studentreportparent;?>" target="_blank" style="color:blue;text-decoration: underline;">View Parents Acknowledgement Form</a></td>
+                   <td><a href="../<?php echo $studentreportparent;?>" target="_blank" style="color:blue;text-decoration: underline;">View Parents Acknowledgement Form</a></td>
                </tr>
            </table>
        </div>
