@@ -32,7 +32,7 @@
             
             <?php 
             $studentID = $student['studentID'];
-            $sql1 = "SELECT * FROM Internship WHERE studentID = '$studentID'";
+            $sql1 = "SELECT * FROM internship WHERE studentID = '$studentID'";
             $internships = $db->query($sql1);?>
             <td>
             <?php while($internship = mysqli_fetch_assoc($internships)): ?>
