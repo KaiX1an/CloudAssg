@@ -21,14 +21,16 @@
 //        LEFT JOIN supervisor ON student.supervisorID = supervisor.supervisorID 
 //        LEFT JOIN internship ON student.studentID = internship.studentID";
         
-        $sql = "SELECT student.*, COALESCE(supervisor.name, '- Not Assigned -') AS supName,
-        CASE
-                WHEN internship.studentID IS NULL THEN '- Waiting Student Response -'
-                ELSE internship.status
-            END AS InternshipStatus
-        FROM student
-        LEFT JOIN supervisor  ON student.supervisorID = supervisor.supervisorID
-        LEFT JOIN internship  ON student.studentID = internship.studentID";
+        $sql = "SELECT student.*, 
+       COALESCE(supervisor.name, '- Not Assigned -') AS supName,
+       CASE
+           WHEN internship.studentID IS NULL THEN '- Waiting Student Response -'
+           ELSE internship.status
+       END AS InternshipStatus
+FROM student
+LEFT JOIN supervisor ON student.supervisorID = supervisor.supervisorID
+LEFT JOIN internship ON student.studentID = internship.studentID
+WHERE student.supervisorID IS NULL";
     $students = $db->query($sql);
 ?>
 
@@ -45,14 +47,14 @@
         </button>-->
         <div id="navbarSupportedContent-333" >
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item mx-5" style="border-bottom-style: solid; border-bottom-width: thin;">
+              <li class="nav-item mx-5">
                 <a class="nav-link" href="studentList.php">All Students</a>
               </li>
-              <li class="nav-item mx-5">
+              <li class="nav-item mx-5" style="border-bottom-style: solid; border-bottom-width: thin;">
                   <a class="nav-link" href="studentListNotAssigned.php">Not Assigned</a>
               </li>
               <li class="nav-item mx-5">
-                  <a class="nav-link" href="studentListWait.php">Waiting Student Response</a>
+                <a class="nav-link" href="studentListWait.php">Waiting Student Response</a>
               </li>
              
             </ul>

@@ -15,6 +15,28 @@
   <!-- Your emptom styles (optional) -->
   <link href="../css/style.css" rel="stylesheet">  
   
+  <style>
+/* Style for the back to top button */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.back-to-top:hover {
+  background-color: darkred;
+}
+</style>
+  
 </head>
 
 <body>
