@@ -1,12 +1,12 @@
 <?php
 
-$db = mysqli_connect('localhost', 'root', '', 'internship');
+$db = mysqli_connect('internshipdb.csbnk3w2oyn3.us-east-1.rds.amazonaws.com', 'admin', 'abcd1234', 'internship', 3006);
 if(mysqli_connect_errno()){
 	echo "Database connection failed with following errors: ".mysqli_connect_error();
 	die();
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/CloudAssg/Cloud/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Cloud/config.php';
 require_once BASEURL.'helpers/helpers.php';
 /*
 $cart_id = '';
