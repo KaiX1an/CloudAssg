@@ -79,7 +79,7 @@ $(document).ready(function() {
 				if($check_customer > 0){
 					$_SESSION['email'] = $email;
 					echo "<script>alert('You logged in successfully!')</script>";
-					echo "<script>window.open('index.php','_self')</script>";
+					echo "<script>window.open('myaccount.php','_self')</script>";
 				}else{
 					$_SESSION['email'] = $email;
 					echo "<script>alert('You logged in successfully!')</script>";
