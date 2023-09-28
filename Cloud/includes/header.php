@@ -40,7 +40,7 @@
   <header>
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-      <img src="committee/includes/logo.png" width="150px" alt=""/>
+        <img src="committee/includes/logo.png" width="150px" alt=""/>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

@@ -128,7 +128,7 @@
             echo "<script>window.open('progressRep.php','_self')</script>";
         }else{
             //upload if everything ok
-            $insertProgress = "INSERT INTO progressreport (progressID, progressReport, marks, status, submissionDate, studentID) VALUES ('$id', '$target_file','','pending', '$datetoday', '$fk_id')";
+            $insertProgress = "INSERT INTO progressreport (progressID, progressReport, marks, status, submissionDate, studentID) VALUES ('$id', '$target_file','','Pending', '$datetoday', '$fk_id')";
             $db->query($insertProgress);
 
             // Perform the database query
