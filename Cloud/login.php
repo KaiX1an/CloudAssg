@@ -3,7 +3,7 @@
 	include 'includes/header.php';
 	include 'core/init.php';
 ?>
-<img src="img/sample.jpg" alt=""/>
+
 <div class="container p-3">
 	<div class="card">
 		<div class="card-header">

@@ -12,13 +12,13 @@
   
     <main>
         <h3 class="text-center p-3">Student Details</h3>
-        <div class="m-4 border" width="100%">
+        <div class="m-4 border shadow-sm" width="100%">
           <table class="table">
                 <tr>
-                    <td width="15%">Student ID</td>
-                    <td width="20%">Student Name</td>
-                    <td width="20%">Student Email</td>
-                    <td width="20%">Course</td>
+                    <td width="15%" style="font-weight: bold">Student ID</td>
+                    <td width="20%" style="font-weight: bold">Student Name</td>
+                    <td width="20%" style="font-weight: bold">Student Email</td>
+                    <td width="20%" style="font-weight: bold">Course</td>
                 </tr
      
                 <?php while($student = mysqli_fetch_assoc($students)): ?>
@@ -41,14 +41,14 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
     $sups = $db->query($sql2);
 ?>
         
-        <h4 class="text-center p-3">Supervisor Details</h3>
-        <div class="m-4 border" width="100%">
+        <h4 class="text-center pt-3 pb-0">Supervisor Details</h3>
+        <div class="m-2 mx-4 border shadow-sm" width="100%">
           <table class="table">
               <tr>
-                  <td width="15%">Supervisor ID</td>
-                  <td width="20%">Supervisor Name</td>
-                  <td width="20%">Supervisor Email</td>
-                  <td width="20%">Department</td>
+                  <td width="15%" style="font-weight: bold">Supervisor ID</td>
+                  <td width="20%" style="font-weight: bold">Supervisor Name</td>
+                  <td width="20%" style="font-weight: bold">Supervisor Email</td>
+                  <td width="20%" style="font-weight: bold">Department</td>
                   <td width="20%"></td>
               </tr>
               
@@ -83,18 +83,20 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
         WHERE student.studentID = internship.studentID AND student.studentID = '$retStudentID'";
     $inDets = $db->query($sql3);
 ?>
-        
+<!--        
         <h4 class="text-center p-3">Internship Details</h3>
-        <div class="m-4 border" width="100%">
+        <div class="m-4 border shadow-sm" width="100%">-->
+        <h4 class="text-center pt-3 pb-0">Internship Details</h3>
+        <div class="m-2 mx-4 border shadow-sm" width="100%">
           <!-- List of Internships -->
           <table class="table">
               <tr>
-                  <td width="15%">Internship ID</td>
-                  <td width="20%">Company Name</td>
-                  <td width="20%">Location</td>
-                  <td width="10%">Start Date</td>
-                  <td width="10%">End Date</td>
-                  <td width="15%">Status</td>
+                  <td width="15%" style="font-weight: bold">Internship ID</td>
+                  <td width="20%" style="font-weight: bold">Company Name</td>
+                  <td width="20%" style="font-weight: bold">Location</td>
+                  <td width="10%" style="font-weight: bold">Start Date</td>
+                  <td width="10%" style="font-weight: bold">End Date</td>
+                  <td width="15%" style="font-weight: bold">Status</td>
               </tr>
                      
                 <?php if(mysqli_num_rows($inDets) > 0): ?>
@@ -131,24 +133,26 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
     $inDocs = $db->query($sql4);
 ?>
         
-        <h4 class="text-center p-3">Internship Documents</h3>
-        <div class="m-4 border" width="100%">
+<!--        <h4 class="text-center p-3">Internship Documents</h3>
+        <div class="m-4 border shadow-sm" width="100%">-->
+        <h4 class="text-center pt-3 pb-0">Internship Documents</h3>
+        <div class="m-2 mx-4 border shadow-sm" width="100%">
           <!-- List of Internships -->
           <table class="table">
               <tr>
-                  <td width="15%">Report ID</td>
-                  <td width="20%">Indemnity Letter</td>
-                  <td width="20%">Company Acceptance Letter</td>
-                  <td width="20%">Parent Acknowledgement Letter</td>
-                  <td width="20%">Status</td>
+                  <td width="15%" style="font-weight: bold">Report ID</td>
+                  <td width="20%" style="font-weight: bold">Indemnity Letter</td>
+                  <td width="20%" style="font-weight: bold">Company Acceptance Letter</td>
+                  <td width="20%" style="font-weight: bold">Parent Acknowledgement Letter</td>
+                  <td width="20%" style="font-weight: bold">Status</td>
               </tr>
         <?php if(mysqli_num_rows($inDocs) > 0): ?>
                 <?php while($inDoc = mysqli_fetch_assoc($inDocs)): ?>
                     <tr>
                         <td><?=$inDoc['reportID'];?></td>
-                        <td><a><u><?=$inDoc['indemnityReport'];?></u></a></td>
-                        <td><a><u><?=$inDoc['companyAccLetter'];?></u></a></td>
-                        <td><a><u><?=$inDoc['parentAck'];?></u></a></td>
+                        <td><a class="text-primary" href="<?php echo $inDoc['indemnityReport'];?>" target="_blank" download><u><?php echo $inDoc['indemnityReport'];?></u></a></td>
+                        <td><a class="text-primary" href="<?php echo $inDoc['companyAccLetter'];?>" target="_blank" download><u><?php echo $inDoc['companyAccLetter'];?></u></a></td>
+                        <td><a class="text-primary" href="<?php echo $inDoc['parentAck'];?>" target="_blank" download><u><?php echo $inDoc['parentAck'];?></u></a></td>
                         <td><?=$inDoc['status'];?></td>
                     </tr>
                 <?php endwhile;?>
@@ -174,23 +178,23 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
     $prgs = $db->query($sql5);
 ?>
         
-        <h4 class="text-center p-3">Progress Reports</h3>
-        <div class="m-4 border" width="100%">
+        <h4 class="text-center pt-3 pb-0">Progress Reports</h3>
+        <div class="m-2 mx-4 border shadow-sm" width="100%">
           <!-- List of Internships -->
           <table class="table">
               <tr>
-                  <td width="15%">Progress ID</td>
-                  <td width="20%">File Name</td>
-                  <td width="20%">Submission Date</td>
-                  <td width="20%">Marks</td>
-                  <td width="20%">Status</td>
+                  <td width="15%" style="font-weight: bold">Progress ID</td>
+                  <td width="20%" style="font-weight: bold">File Name</td>
+                  <td width="20%" style="font-weight: bold">Submission Date</td>
+                  <td width="20%" style="font-weight: bold">Marks</td>
+                  <td width="20%" style="font-weight: bold">Status</td>
               </tr>
               
               <?php if(mysqli_num_rows($prgs) > 0): ?>
                 <?php while($prg = mysqli_fetch_assoc($prgs)): ?>
                     <tr>
                         <td><?=$prg['progressID'];?></td>
-                        <td><a><u><?=$prg['progressReport'];?></u></a></td>
+                        <td><a class="text-primary" href="<?php echo $inDoc['progressReport'];?>" target="_blank" download><u><?php echo $inDoc['progressReport'];?></u></a></td>
                         <td><?=$prg['submissionDate'];?></td>
                         <td><?=$prg['marks'];?></td>
                         <td><?=$prg['status'];?></td>
