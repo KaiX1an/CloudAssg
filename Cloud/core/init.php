@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('localhost', 'root', '', 'internship');
+$db = mysqli_connect('107.23.17.120', 'admin', 'abcd1234', 'internship');
 if(mysqli_connect_errno()){
 	echo "Database connection failed with following errors: ".mysqli_connect_error();
 	die();
