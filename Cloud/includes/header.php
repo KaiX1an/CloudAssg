@@ -56,6 +56,8 @@
                 ";
               }
               else{
+                echo "<li class='nav-item'><a href='indemnityLetter.php' class='nav-link' style='border-radius: 10em;'>Internship Submission</a></li>";
+                echo "<li class='nav-item'><a href='progressRep.php' class='nav-link' style='border-radius: 10em;'>Progress</a></li>";
                 echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
                 echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
               }
