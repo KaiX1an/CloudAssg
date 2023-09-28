@@ -23,15 +23,14 @@
   <div class="m-4" width="100%">
     <table class="table">
         <tr>
-            <td width="15%">Progress Report</td>
+            <td width="35%">Progress Report</td>
             <td width="20%">Submission Date</td>
             <td width="20%">Report Marks</td>
             <td width="20%">Status</td>
-            <td width="20%"></td>
         </tr>
     <?php while($report = mysqli_fetch_assoc($reports)): ?>
         <tr>
-            <td><a href="../<?php echo $file['progressReport'];?>" target="_blank" style="color:blue;text-decoration: underline;"><?=$report['progressReport'];?></a> </td>
+            <td><a href="../<?php echo $report['progressReport'];?>" target="_blank" style="color:blue;text-decoration: underline;"><?=$report['progressReport'];?></a> </td>
             <td><?=$report['submissionDate'];?> </td>
             <?php 
             $_SESSION['reportID'] = $report['progressID'];
