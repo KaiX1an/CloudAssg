@@ -8,7 +8,8 @@ if(mysqli_connect_errno()){
 
 //require_once $_SERVER['DOCUMENT_ROOT'].'/CloudAssg/Cloud/config.php';
 require_once '/var/www/html/Cloud/config.php';
-require_once BASEURL.'helpers/helpers.php';
+//require_once BASEURL.'helpers/helpers.php';
+require_once '/var/www/html/Cloud/helpers/helpers.php';
 /*
 $cart_id = '';
 if(isset($_COOKIE[CART_COOKIE])){
