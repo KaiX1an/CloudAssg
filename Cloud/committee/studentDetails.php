@@ -18,30 +18,22 @@
         <div id="navbarSupportedContent-333" >
             <ul class="navbar-nav mr-auto">
               <li class="nav-item mx-5">
-                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec1', -250)">Student Details</a>
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec1', -200)">Student Details</a>
               </li>
               <li class="nav-item mx-5">
-                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec2', -250)">Supervisor Details</a>
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec2', -200)">Supervisor Details</a>
               </li>
               <li class="nav-item mx-5">
                 <!--<a class="nav-link" href="#sec3">Internship Details</a>-->
-                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec3', -250)">Internship Details</a>
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec3', -200)">Internship Details</a>
               </li>
               <li class="nav-item mx-5">
-                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec4', -250)">Internship Documents</a>
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec4', -200)">Internship Documents</a>
               </li>
               <li class="nav-item mx-5">
-                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec5', -250)">Progress Reports</a>
+                <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('sec5', -200)">Progress Reports</a>
               </li>
-              <?php 
-    //            if(!isset($_SESSION['email'])){
-    //              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
-    //            }
-    //            else{
-    //              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
-    //              echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
-    //            }
-    //          ?>
+             
             </ul>
         </div>
     </nav>
@@ -261,6 +253,29 @@ WHERE student.supervisorID = supervisor.supervisorID AND student.studentID = '$r
             window.scrollTo({ top: targetY, behavior: 'smooth' });
         }
     }
+</script>
+
+<button class="back-to-top" onclick="topFunction()">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.querySelector(".back-to-top").style.display = "block";
+    } else {
+        document.querySelector(".back-to-top").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 </script>
 
 <?php include 'includes/footer.php';  ?>
