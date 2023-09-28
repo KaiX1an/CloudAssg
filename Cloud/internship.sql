@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2023 at 02:23 PM
+-- Generation Time: Sep 28, 2023 at 04:33 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,6 +33,13 @@ CREATE TABLE `committee` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `committee`
+--
+
+INSERT INTO `committee` (`committeeID`, `name`, `email`, `password`) VALUES
+('COM001', 'Ali', 'alli@gmail.com', 'pass123');
 
 -- --------------------------------------------------------
 
@@ -93,7 +100,7 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`studentID`, `name`, `email`, `password`, `course`, `supervisorID`) VALUES
 ('STD001', 'EeeLee', 'eee@gmail.com', 'pass123', 'Bachelor of Computer Science', 'SPV001'),
-('SDT002', 'Kai Xian Oo', 'ookx-pm20@student.tarc.edu.my', 'abc123', 'Bachelors of Software Engineering', '');
+('SDT002', 'Kai Xian Oo', 'ookx-pm20@student.tarc.edu.my', 'pass123', 'Bachelors of Software Engineering', 'SPV001');
 
 -- --------------------------------------------------------
 
@@ -110,6 +117,13 @@ CREATE TABLE `studentreport` (
   `studentID` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `studentreport`
+--
+
+INSERT INTO `studentreport` (`reportID`, `indemnityReport`, `companyAccLetter`, `parentAck`, `status`, `studentID`) VALUES
+('R001', 'uploads/University Support Letter_OoKaiXian.pdf', '', '', '', 'STD001');
+
 -- --------------------------------------------------------
 
 --
@@ -124,6 +138,13 @@ CREATE TABLE `supervisor` (
   `position` varchar(100) NOT NULL,
   `department` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `supervisor`
+--
+
+INSERT INTO `supervisor` (`supervisorID`, `name`, `email`, `password`, `position`, `department`) VALUES
+('SPV001', 'Desmund Chau Guan Hin', 'chauguanhin@tarc.edu.my', 'pass123', 'Lecturer', 'Faculty of Computing and Information');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
