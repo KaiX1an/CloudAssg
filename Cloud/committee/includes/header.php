@@ -46,7 +46,6 @@
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
         
       <img src="includes/logo.png" width="150px" alt=""/>
-      <h4 class="pt-2 mr-4" style="font-weight: bold">&nbsp;Internship Portal</h4>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
