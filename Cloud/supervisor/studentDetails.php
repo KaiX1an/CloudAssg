@@ -39,7 +39,7 @@
         </table>
     </div>
 <?php 
-  $sql = "SELECT * FROM student WHERE studentID = '$selectedStudent', supervisorID = '$id'";
+  $sql = "SELECT * FROM student WHERE studentID = '$selectedStudent' AND supervisorID = '$id'";
   $students = $db->query($sql);
 ?>
     <div class="col-md-8">
