@@ -83,11 +83,11 @@ $(document).ready(function() {
         $maxID = $row['MAX(studentID)'];
 
         if ($maxID === null) {
-            $id = "SDT001";
+            $id = "STD001";
         } else {
             $numericPart = intval(substr($maxID, 3));
             $newIDNum = $numericPart + 1;
-            $id = "SDT" . str_pad($newIDNum, 3, '0', STR_PAD_LEFT);
+            $id = "STD" . str_pad($newIDNum, 3, '0', STR_PAD_LEFT);
         }
 		$fullname = sanitize($_POST['fullname']);
 		$email = sanitize($_POST['email']);
